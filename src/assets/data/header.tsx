@@ -2,19 +2,23 @@ import type { NavigationSection } from '@/components/blocks/menu-navigation'
 
 export const navigationData: NavigationSection[] = [
   {
-    title: 'I MIELI',
-    href: '#about-us'
+    title: 'Home',
+    href: '/#home'
   },
   {
-    title: 'RECENSIONI',
-    href: '#testimonials'
+    title: 'La Nostra Storia',
+    href: '/#about-us'
   },
   {
-    title: 'CONTATTACI',
-    href: '#contact-us'
+    title: 'I Nostri Mieli',
+    href: '/#prodotti'
   },
   {
-    title: 'Offers',
-    href: '#offers'
+    title: 'Recensioni',
+    href: '/#testimonials'
+  },
+  {
+    title: 'Dove Siamo',
+    href: '/#contact-us'
   }
 ]

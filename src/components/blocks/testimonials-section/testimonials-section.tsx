@@ -1,94 +1,71 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import { Rating } from '@/components/ui/rating'
+import { Button } from '@/components/ui/button'
 
-export type TestimonialItem = {
+type Testimonial = {
   name: string
-  avatar: string
-  rating: number
-  content: string
+  username: string
+  body: string
+  img: string
 }
 
-type TestimonialsComponentProps = {
-  testimonials: TestimonialItem[]
-}
-
-const TestimonialsComponent = ({ testimonials }: TestimonialsComponentProps) => {
+const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => {
   return (
-    <section
-      id='testimonials'
-      className='before:border-primary/20 relative py-14 before:absolute before:inset-0 before:-z-10 before:-skew-y-3 before:border-b sm:py-28 lg:py-36'
-    >
-      <Carousel
-        className='mx-auto flex max-w-7xl gap-12 px-4 max-sm:flex-col sm:items-center sm:gap-16 sm:px-6 lg:gap-24 lg:px-8'
-        opts={{
-          align: 'start',
-          slidesToScroll: 1
-        }}
-      >
-        {/* Left Content */}
-        <div className='space-y-4 sm:w-1/2 lg:w-1/3'>
-          <Badge variant='outline' className='text-sm font-normal'>
-            Testimonials
+    <section id='testimonials' className='bg-background py-12 sm:py-16 lg:py-24'>
+      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+        {/* Header della sezione */}
+        <div className='mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center space-y-4 text-center sm:mb-16 lg:mb-24'>
+          <Badge variant='outline' className='border-primary text-primary text-sm font-normal'>
+            Dicono di Noi
           </Badge>
-
-          <h2 className='text-2xl font-semibold sm:text-3xl lg:text-4xl'>
-            Customers <br />
-            Feedback
-          </h2>
-
-          <p className='text-muted-foreground text-xl'>
-            Here&apos;s how our customers enjoyed our restaurant and the services we offer.
+          <h2 className='text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl'>Cosa pensano i nostri clienti</h2>
+          <p className='text-muted-foreground mt-4 text-xl'>
+            La qualità del nostro miele artigianale raccontata da chi lo ha già assaggiato. La tua soddisfazione è il
+            premio più grande per il nostro lavoro con le api.
           </p>
-
-          <div className='flex items-center gap-4'>
-            <CarouselPrevious
-              variant='default'
-              className='disabled:bg-primary/10 disabled:text-primary static size-9 translate-y-0 rounded-full disabled:opacity-100'
-            />
-            <CarouselNext
-              variant='default'
-              className='disabled:bg-primary/10 disabled:text-primary static size-9 translate-y-0 rounded-full disabled:opacity-100'
-            />
-          </div>
         </div>
 
-        {/* Right Testimonial Carousel */}
-        <div className='relative max-w-196 sm:w-1/2 lg:w-2/3'>
-          <CarouselContent className='sm:-ml-6'>
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className='sm:pl-6 lg:basis-1/2'>
-                <Card className='hover:border-primary h-full rounded-none transition-colors duration-300'>
-                  <CardContent className='space-y-5'>
-                    <div className='flex items-center gap-3'>
-                      <Avatar className='size-10 rounded-full'>
-                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} loading='lazy' />
-                        <AvatarFallback className='rounded-full text-sm'>
-                          {testimonial.name
-                            .split(' ', 2)
-                            .map(n => n[0])
-                            .join('')}
-                        </AvatarFallback>
-                      </Avatar>
-
-                      <div className='flex-1'>
-                        <h4 className='font-medium'>{testimonial.name}</h4>
-                      </div>
-                    </div>
-
-                    <Rating readOnly variant='yellow' size={24} value={testimonial.rating} precision={0.5} />
-                    <p>{testimonial.content}</p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
+        {/* Griglia delle Recensioni */}
+        <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+          {testimonials.map((testimonial, index) => (
+            <Card key={index} className='bg-muted/50 border-none shadow-sm transition-shadow hover:shadow-md'>
+              <CardHeader className='flex flex-row items-center gap-4 pb-2'>
+                <img
+                  src={testimonial.img}
+                  alt={testimonial.name}
+                  className='size-12 rounded-full object-cover'
+                  loading='lazy'
+                />
+                <div className='flex flex-col'>
+                  <span className='text-base font-semibold'>{testimonial.name}</span>
+                  <span className='text-muted-foreground text-sm'>{testimonial.username}</span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className='text-muted-foreground leading-relaxed'>"{testimonial.body}"</p>
+                {/* Stelline finte per dare l'idea della recensione 5 stelle */}
+                <div className='mt-4 flex gap-1 text-yellow-500'>★ ★ ★ ★ ★</div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-      </Carousel>
+
+        {/* Call To Action per chiedere nuove recensioni */}
+        <div className='mt-16 flex flex-col items-center justify-center space-y-6 text-center'>
+          <h3 className='text-2xl font-semibold'>Hai già provato i nostri prodotti?</h3>
+          <p className='text-muted-foreground max-w-xl'>
+            La tua opinione è fondamentale per noi e ci aiuta a far conoscere la nostra piccola realtà artigianale a più
+            persone.
+          </p>
+          <Button asChild size='lg' className='rounded-full'>
+            <a href='HREF_DELLA_TUA_SCHEDA_GOOGLE' target='_blank' rel='noopener noreferrer'>
+              Lasciaci una recensione su Google
+            </a>
+          </Button>
+        </div>
+      </div>
     </section>
   )
 }
 
-export default TestimonialsComponent
+export default Testimonials

@@ -1,24 +1,28 @@
-import { Clock8Icon, MapPinIcon, Mail, PhoneIcon } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 
 export const contactInfo = [
   {
-    title: 'ORARI DI APERTURA',
-    icon: Clock8Icon,
-    description: 'Tutti i giorni \n solo su appuntamento'
+    id: 1,
+    icon: MapPin,
+    title: 'Dove Siamo',
+    description: 'Via Ettore Stocchetti 84, 21023 Besozzo (VA)'
   },
   {
-    title: 'DOVE TROVARCI',
-    icon: MapPinIcon,
-    description: 'Via E. Stocchetti 84, Besozzo, Varese'
+    id: 2,
+    icon: Phone,
+    title: 'Telefono / WhatsApp',
+    description: '+39 339 6599663'
   },
   {
-    title: 'EMAIL',
+    id: 3,
     icon: Mail,
+    title: 'Email',
     description: 'api.bertelli@gmail.com'
   },
   {
-    title: 'NUMERO',
-    icon: PhoneIcon,
-    description: '3396599663'
+    id: 4,
+    icon: Clock,
+    title: 'Orari',
+    description: 'RICEVIAMO SOLO SU PRENOTAZIONE'
   }
 ]

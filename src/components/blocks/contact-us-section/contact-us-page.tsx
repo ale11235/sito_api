@@ -1,74 +1,63 @@
 import type { ComponentType } from 'react'
-
-import { Card, CardContent } from '@/components/ui/card'
-import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
+import { Card, CardContent } from '@/components/ui/card'
 
 type ContactInfo = {
-  title: string
+  id: number
   icon: ComponentType
+  title: string
   description: string
-}[]
+}
 
-const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
+const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo[] }) => {
   return (
-    <section
-      id='contact-us'
-      className='before:bg-muted relative py-8 before:absolute before:inset-0 before:-z-10 before:skew-y-3 sm:py-16 lg:py-24'
-    >
+    <section id='contact-us' className='bg-muted/30 py-12 sm:py-16 lg:py-24'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        {/* Header */}
-        <div className='mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center space-y-4 text-center sm:mb-16 lg:mb-24'>
-          <Badge variant='outline' className='text-sm font-normal'>
-            Contact Us
+        {/* Header con la Regola d'Oro del PRD */}
+        <div className='mx-auto mb-12 flex max-w-3xl flex-col items-center justify-center space-y-4 text-center md:mb-16'>
+          <Badge variant='outline' className='border-primary text-primary text-sm font-normal'>
+            Contatti
           </Badge>
-          <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Get in touch with us </h2>
-          <p className='text-muted-foreground text-xl'>
-            We eagerly look forward to warmly welcoming you very soon to our event. It promises to be a memorable
-            experience filled with exciting activities.
+          <h2 className='text-primary text-3xl font-bold tracking-tight uppercase md:text-4xl lg:text-5xl'>
+            Vieni a trovarci su appuntamento
+          </h2>
+          <p className='text-muted-foreground mt-4 text-xl font-medium'>
+            Il nostro laboratorio è aperto per il ritiro dei prodotti e per conoscersi, ma{' '}
+            <strong className='text-foreground'>riceviamo esclusivamente su prenotazione</strong>. Contattaci per
+            fissare un incontro!
           </p>
         </div>
 
-        <div className='grid items-center gap-12 lg:grid-cols-2'>
-          <img
-            src='/images/contact-us-01.webp'
-            alt='Contact illustration'
-            className='size-full object-cover max-lg:max-h-70'
-            loading='lazy'
-          />
+        <div className='grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-8'>
+          {/* Box dei Contatti */}
+          <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
+            {contactInfo.map(info => (
+              <Card key={info.id} className='bg-background border-none shadow-md transition-shadow hover:shadow-lg'>
+                <CardContent className='flex flex-col items-center space-y-4 p-6 text-center'>
+                  <div className='bg-primary/10 text-primary flex size-14 items-center justify-center rounded-full [&>svg]:size-7'>
+                    <info.icon />
+                  </div>
+                  <div>
+                    <h3 className='text-lg font-semibold'>{info.title}</h3>
+                    <p className='text-muted-foreground mt-2 font-medium'>{info.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
-          <div>
-            <h3 className='mb-2 text-2xl'>We&apos;re here to serve you</h3>
-            <p className='text-muted-foreground mb-10 text-lg'>
-              We would love to hear from you, Whether you have a question, need a reservation, or want to learn more
-              about our offerings, we&apos;re here to assist.
-            </p>
-
-            {/* Contact Info Grid */}
-            <div className='grid gap-6 sm:grid-cols-2'>
-              {contactInfo.map((info, index) => (
-                <Card
-                  className='bg-background hover:border-primary rounded-none shadow-none transition-colors duration-300'
-                  key={index}
-                >
-                  <CardContent className='flex flex-col items-center gap-4 text-center'>
-                    <Avatar className='size-9 border'>
-                      <AvatarFallback className='bg-transparent [&>svg]:size-5'>
-                        <info.icon />
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className='space-y-3'>
-                      <h4 className='text-lg font-semibold'>{info.title}</h4>
-                      <div className='text-muted-foreground text-base font-medium'>
-                        {info.description.split('\n').map((line, idx) => (
-                          <p key={idx}>{line}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          {/* Mappa Interattiva Google Maps */}
+          <div className='h-[400px] min-h-[400px] w-full overflow-hidden rounded-2xl border shadow-xl lg:h-full'>
+            <iframe
+              src='https://maps.google.com/maps?q=Via%20Ettore%20Stocchetti%2084%2C%20Besozzo&t=&z=15&ie=UTF8&iwloc=&output=embed'
+              width='100%'
+              height='100%'
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading='lazy'
+              referrerPolicy='no-referrer-when-downgrade'
+              title='Mappa Laboratorio Apicoltura Bertelli'
+            ></iframe>
           </div>
         </div>
       </div>

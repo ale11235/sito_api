@@ -44,10 +44,20 @@ const schema = {
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} schema={schema}>
   <HeroSectionPage menudata={menudata} client:load />
-  <PopularDishes popularDishes={popularDishes} client:load />
+
+  {
+    /* Ho riordinato leggermente le sezioni per un flusso logico migliore:
+      Prima la storia, poi i prodotti, le recensioni e infine i contatti */
+  }
   <AboutUs stats={stats} />
+  <PopularDishes popularDishes={popularDishes} client:load />
   <Testimonials testimonials={testimonials} client:load />
-  <NewItems newItems={newItems} />
   <ContactUs contactInfo={contactInfo} />
-  <Offers galleryImage={GalleryImage} />
+
+  {/* --- SEZIONI NASCOSTE PER SVILUPPI FUTURI --- */}
+  {/* Qui implementeremo "Adotta un Alveare" */}
+  {/* <NewItems newItems={newItems} /> */}
+
+  {/* Qui implementeremo "Bomboniere e Favo" */}
+  {/* <Offers galleryImage={GalleryImage} /> */}
 </Layout>

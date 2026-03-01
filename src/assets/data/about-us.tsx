@@ -1,24 +1,24 @@
-import { Trophy, SparklesIcon, Users, ChefHat } from 'lucide-react'
+import { Flower2, ThermometerSnowflake, MapPin, Heart } from 'lucide-react'
 
 export const stats = [
   {
-    icon: SparklesIcon,
-    value: '20+',
-    description: ['Years of Culinary', 'Expertise']
+    icon: Heart,
+    value: '3',
+    description: ['Generazioni', 'di Passione']
   },
   {
-    icon: ChefHat,
-    value: '70+',
-    description: ['Signature Dishes', 'Perfected']
+    icon: Flower2,
+    value: 'Milioni',
+    description: ['Di Fiori', 'Visitati']
   },
   {
-    icon: Users,
-    value: '500+',
-    description: ['Happy Guests', 'Every Month']
+    icon: ThermometerSnowflake,
+    value: '100%',
+    description: ['Lavorazione', 'Artiginale']
   },
   {
-    icon: Trophy,
-    value: '25',
-    description: ['Prestigious', 'Culinary Awards']
+    icon: MapPin,
+    value: 'Km 0',
+    description: ['Prealpi', 'Varesine']
   }
 ]

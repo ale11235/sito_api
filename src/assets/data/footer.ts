@@ -1,18 +1,22 @@
 export const footerData = [
   {
-    title: 'I MIELI',
-    href: '#about-us'
+    title: 'Home',
+    href: '/#home'
   },
   {
-    title: 'RECENSIONI',
-    href: '#testimonials'
+    title: 'Chi Siamo',
+    href: '/#about-us'
   },
   {
-    title: 'CONTATTACI',
-    href: '#contact-us'
+    title: 'I Nostri Mieli',
+    href: '/#prodotti'
   },
   {
-    title: 'Offers',
-    href: '#offers'
+    title: 'Recensioni',
+    href: '/#testimonials'
+  },
+  {
+    title: 'Contatti',
+    href: '/#contact-us'
   }
 ]

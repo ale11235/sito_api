@@ -1,30 +1,62 @@
 export const popularDishes = [
   {
-    image: '/images/popular-dishes/grilled-herb-chicken.webp',
-    alt: 'Grilled Herb Chicken',
-    name: 'Grilled Herb Chicken',
-    type: 'Main course 🥘',
-    description: 'Juicy chicken grilled with herbs and served with garlic sauce.'
+    image: '/images/prodotti/miele-acacia.webp',
+    alt: 'Miele di Acacia',
+    name: 'Miele di Acacia',
+    type: 'Miele Uniflorale 🍯',
+    shortDescription: 'Dolce e delicato, prodotto nelle Prealpi Varesine a Maggio.',
+    description:
+      'Il nostro miele di Acacia è prodotto nel mese di Maggio nelle Prealpi Varesine. Si distingue per il suo sapore estremamente dolce e delicato, perfetto per dolcificare senza alterare i sapori delle bevande. Viene lavorato rigorosamente a freddo per mantenere intatte tutte le sue proprietà.',
+    formats: 'Disponibile in formati da: 1kg, 500g, 250g'
   },
   {
-    image: '/images/popular-dishes/classic-margherita-pizza.webp',
-    alt: 'Classic Margherita Pizza',
-    name: 'Classic Margherita Pizza',
-    type: 'Main course 🍕',
-    description: 'Crispy crust, fresh mozzarella, and basil a true classic.'
+    image: '/images/prodotti/miele-castagno.webp',
+    alt: 'Miele di Castagno',
+    name: 'Miele di Castagno',
+    type: 'Miele Uniflorale 🍯',
+    shortDescription: 'Amaro e deciso, raccolto nei castagneti delle Prealpi Varesine.',
+    description:
+      'Prodotto nel mese di Luglio nei rigogliosi castagneti delle Prealpi Varesine. Questo miele è caratterizzato da un colore scuro e un sapore deciso e amaro, ideale in abbinamento con formaggi stagionati. Lavorato a freddo, non pastorizzato.',
+    formats: 'Disponibile in formati da: 1kg, 500g, 250g'
   },
   {
-    image: '/images/popular-dishes/spicy-shrimp-linguine.webp',
-    alt: 'Spicy Shrimp Linguine',
-    name: 'Spicy Shrimp Linguine',
-    type: 'Main course 🥘',
-    description: 'Shrimp, chili, and creamy tomato sauce tossed to perfection.'
+    image: '/images/prodotti/miele-millefiori.webp',
+    alt: 'Miele Millefiori',
+    name: 'Miele Millefiori',
+    type: 'Miele del Territorio 🌸',
+    shortDescription: 'Fruttato e profumato, prodotto sulle sponde del Lago Maggiore.',
+    description:
+      'Una sinfonia di nettari raccolti a Luglio direttamente sulle sponde del suggestivo Lago Maggiore. Il nostro Millefiori ha un sapore fruttato e ricco che racchiude tutta la biodiversità floreale del nostro territorio lacustre.',
+    formats: 'Disponibile in formati da: 1kg, 500g, 250g'
   },
   {
-    image: '/images/popular-dishes/chocolate-lava-cake.webp',
-    alt: 'Chocolate Lava Cake',
-    name: 'Chocolate Lava Cake',
-    type: 'Desert 🍫',
-    description: 'Warm molten cake with a scoop of vanilla ice cream.'
+    image: '/images/prodotti/miele-tiglio.webp',
+    alt: 'Miele di Tiglio',
+    name: 'Miele di Tiglio',
+    type: 'Miele Uniflorale 🍯',
+    shortDescription: 'Dal sapore balsamico, raccolto nelle valli del Luinese.',
+    description:
+      'Raccolto a Luglio nelle valli del Luinese, un territorio incontaminato incastonato tra il Lago Maggiore e le Alpi. Questo miele si riconosce per il suo inconfondibile retrogusto balsamico e fresco, perfetto per accompagnare le tisane invernali.',
+    formats: 'Disponibile in formati da: 1kg, 500g, 250g'
+  },
+  {
+    image: '/images/prodotti/miele-castagno-tiglio.webp',
+    alt: 'Miele Castagno-Tiglio',
+    name: 'Miele Castagno-Tiglio',
+    type: 'Miele di Montagna ⛰️',
+    shortDescription: 'Unione perfetta tra castagno e tiglio, prodotto in quota.',
+    description:
+      'Una gemma della nostra produzione: questo miele nasce a Luglio nelle valli del Luinese in quota sopra i 1000mt. Rappresenta la perfetta unione tra il carattere amaro del castagno e la freschezza balsamica del tiglio.',
+    formats: 'Disponibile in formati da: 1kg, 500g, 250g'
+  },
+  {
+    image: '/images/prodotti/polline.webp',
+    alt: 'Polline di Castagno',
+    name: 'Polline di Castagno',
+    type: "Prodotti dell'Alveare 🌼",
+    shortDescription: 'Energizzante naturale, raccolto direttamente dalle nostre api.',
+    description:
+      'Il nostro polline di castagno è un superfood naturale, ricco di proteine e vitamine. Viene raccolto con cura dalle nostre api durante la fioritura estiva ed essiccato a freddo per preservarne tutte le incredibili proprietà nutrizionali.',
+    formats: 'Disponibile in vasi da: 250g, 100g'
   }
 ]
